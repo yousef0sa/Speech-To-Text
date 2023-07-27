@@ -28,105 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.rbSpeech = new System.Windows.Forms.RadioButton();
+            this.rbTranslation = new System.Windows.Forms.RadioButton();
+            this.cbCopyText = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbShowText = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cbTo = new System.Windows.Forms.ComboBox();
+            this.cbFrom = new System.Windows.Forms.ComboBox();
+            this.buttStart = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // rbSpeech
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(8, 16);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Speech";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbSpeech.AutoSize = true;
+            this.rbSpeech.Location = new System.Drawing.Point(8, 16);
+            this.rbSpeech.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbSpeech.Name = "rbSpeech";
+            this.rbSpeech.Size = new System.Drawing.Size(61, 17);
+            this.rbSpeech.TabIndex = 0;
+            this.rbSpeech.TabStop = true;
+            this.rbSpeech.Text = "Speech";
+            this.rbSpeech.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbTranslation
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(8, 37);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Translation";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbTranslation.AutoSize = true;
+            this.rbTranslation.Location = new System.Drawing.Point(8, 37);
+            this.rbTranslation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbTranslation.Name = "rbTranslation";
+            this.rbTranslation.Size = new System.Drawing.Size(75, 17);
+            this.rbTranslation.TabIndex = 1;
+            this.rbTranslation.TabStop = true;
+            this.rbTranslation.Text = "Translation";
+            this.rbTranslation.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // cbCopyText
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(8, 59);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(80, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Recognition";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 17);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Copy Text";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbCopyText.AutoSize = true;
+            this.cbCopyText.Location = new System.Drawing.Point(8, 17);
+            this.cbCopyText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbCopyText.Name = "cbCopyText";
+            this.cbCopyText.Size = new System.Drawing.Size(71, 17);
+            this.cbCopyText.TabIndex = 3;
+            this.cbCopyText.Text = "Copy Text";
+            this.cbCopyText.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.rbSpeech);
+            this.groupBox1.Controls.Add(this.rbTranslation);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(120, 87);
+            this.groupBox1.Size = new System.Drawing.Size(120, 64);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Processes";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.cbCopyText);
+            this.groupBox2.Controls.Add(this.cbShowText);
             this.groupBox2.Location = new System.Drawing.Point(138, 12);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(120, 87);
+            this.groupBox2.Size = new System.Drawing.Size(120, 64);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
             // 
+            // cbShowText
+            // 
+            this.cbShowText.AutoSize = true;
+            this.cbShowText.Location = new System.Drawing.Point(8, 38);
+            this.cbShowText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbShowText.Name = "cbShowText";
+            this.cbShowText.Size = new System.Drawing.Size(74, 17);
+            this.cbShowText.TabIndex = 4;
+            this.cbShowText.Text = "Show Text";
+            this.cbShowText.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 109);
+            this.groupBox3.Controls.Add(this.cbTo);
+            this.groupBox3.Controls.Add(this.cbFrom);
+            this.groupBox3.Location = new System.Drawing.Point(13, 77);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -134,24 +129,6 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Languages";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(99, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 17);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(99, 21);
-            this.comboBox2.TabIndex = 1;
             // 
             // label1
             // 
@@ -163,39 +140,44 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "to";
             // 
-            // checkBox2
+            // cbTo
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(8, 38);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(74, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Show Text";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.cbTo.FormattingEnabled = true;
+            this.cbTo.Location = new System.Drawing.Point(140, 17);
+            this.cbTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbTo.Name = "cbTo";
+            this.cbTo.Size = new System.Drawing.Size(99, 21);
+            this.cbTo.TabIndex = 1;
             // 
-            // checkBox3
+            // cbFrom
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(8, 60);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(51, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Save";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.cbFrom.FormattingEnabled = true;
+            this.cbFrom.Location = new System.Drawing.Point(6, 17);
+            this.cbFrom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbFrom.Name = "cbFrom";
+            this.cbFrom.Size = new System.Drawing.Size(99, 21);
+            this.cbFrom.TabIndex = 0;
+            // 
+            // buttStart
+            // 
+            this.buttStart.Location = new System.Drawing.Point(96, 132);
+            this.buttStart.Name = "buttStart";
+            this.buttStart.Size = new System.Drawing.Size(75, 23);
+            this.buttStart.TabIndex = 7;
+            this.buttStart.Text = "Start";
+            this.buttStart.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 163);
+            this.Controls.Add(this.buttStart);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Akhbar MT", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -214,18 +196,17 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RadioButton rbSpeech;
+        private System.Windows.Forms.RadioButton rbTranslation;
+        private System.Windows.Forms.CheckBox cbCopyText;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbTo;
+        private System.Windows.Forms.ComboBox cbFrom;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox cbShowText;
+        private System.Windows.Forms.Button buttStart;
     }
 }
 
