@@ -39,6 +39,7 @@
             this.cbTo = new System.Windows.Forms.ComboBox();
             this.cbFrom = new System.Windows.Forms.ComboBox();
             this.buttStart = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -166,6 +167,12 @@
             this.buttStart.TabIndex = 7;
             this.buttStart.Text = "Start";
             this.buttStart.UseVisualStyleBackColor = true;
+            this.buttStart.Click += new System.EventHandler(this.buttStart_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
             // Form1
             // 
@@ -207,6 +214,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbShowText;
         private System.Windows.Forms.Button buttStart;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
