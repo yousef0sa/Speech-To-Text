@@ -166,6 +166,7 @@
             this.buttStart.TabIndex = 7;
             this.buttStart.Text = "Start";
             this.buttStart.UseVisualStyleBackColor = true;
+            this.buttStart.Click += new System.EventHandler(this.buttStart_Click);
             // 
             // Form1
             // 
