@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Languages.cs" />
     <Compile Include="Class\Speech.cs" />
     <Compile Include="Class\Translation.cs" />
     <Compile Include="Form1.cs">

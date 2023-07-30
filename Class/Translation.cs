@@ -8,6 +8,10 @@ namespace Speech_To_Text.Class
 {
     public class Translation
     {
+        public dynamic TrText { get { return translations; } private set { translations = value; } }
+
+
+        private static dynamic translations;
         private string key;
         private string location;
         private readonly string endpoint = "https://api.cognitive.microsofttranslator.com";
@@ -45,12 +49,12 @@ namespace Speech_To_Text.Class
 
                 // Parse the JSON response to get the translation text
                 var translationData = JsonConvert.DeserializeObject<dynamic>(result);
-                var translations = translationData[0].translations;
+                translations = translationData[0].translations;
                 foreach (var translation in translations)
                 {
-                    // Print the translation
-                    Console.WriteLine(textToTranslate);
-                    Console.WriteLine($"Translated to {translation.to}: {translation.text}");
+                    //Console.WriteLine($"Translated to {translation.to}: {translation.text}");
+                    TrText = translation;
+
                 }
             }
         }

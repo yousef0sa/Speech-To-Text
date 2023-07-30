@@ -1,5 +1,7 @@
 ﻿using Speech_To_Text.Class;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 
@@ -55,29 +57,42 @@ namespace Speech_To_Text
             {
                 if (speech.Text != null)
                 {
-                    // Check which radio button is selected
-                    if (rbSpeech.Checked)
-                    {
-                        Console.WriteLine(speech.Text);
-                        MessageBox.Show(speech.Text, "Title");
-                        
-                    }
-                    else if (rbTranslation.Checked)
-                    {
-                        await translation.TranslateTextAsync(speech.Text, "en", "zu");
-                    }
 
-                    // Reset the speech.Text value, break out of the loop.
-                    Console.WriteLine("Speech recognition stop and break out of the loop");
+                    if (rbTranslation.Checked)
+                    {
+                        await translation.TranslateTextAsync(speech.Text, "en", "ar");
+
+                    }
                     if (buttStart.InvokeRequired)
                     {
                         buttStart.BeginInvoke(new Action(() => { buttStart.Text = "Start"; }));
                     }
+
+
+                    // Check which radio button is selected
+                    if (rbSpeech.Checked)
+                    {
+                        var SpText = Convert.ToString(speech.Text, CultureInfo.InvariantCulture);
+                        MessageBox.Show(SpText, "Speech");
+
+                    }
+                    if (rbTranslation.Checked)
+                    {
+
+                        //Convert change the text to string that can be shown in the message box 
+                        var trText = Convert.ToString(translation.TrText.text, CultureInfo.InvariantCulture);
+                        var trlanguage = Convert.ToString(translation.TrText.to, CultureInfo.InvariantCulture);
+                        MessageBox.Show(trText, trlanguage);
+
+                    }
+
+                    // Clear the text
                     await speech.StopMyContinuousRecognitionAsync();
+
                     break;
                 }
 
-                //if background worker is cancelled, stop the speech recognition
+                //if background worker was canceled, stop the speech recognition
                 if (backgroundWorker1.CancellationPending)
                 {
                     e.Cancel = true;
@@ -87,6 +102,23 @@ namespace Speech_To_Text
                     break;
                 }
             }
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Add the languages to the combo boxes
+            var cb1Items = new List<Languages>(Languages.Items);
+            var  cb2Items = new List<Languages>(Languages.Items);
+
+            cbFrom.DataSource = cb1Items;
+            cbFrom.DisplayMember = "Text";
+            cbFrom.ValueMember = "Value";
+
+            cbTo.DataSource = cb2Items;
+            cbTo.DisplayMember = "Text";
+            cbTo.ValueMember = "Value";
 
 
         }
