@@ -10,10 +10,11 @@ namespace Speech_To_Text.Class
     {
         private readonly SpeechRecognizer recognizer;
         public string Text { get; private set; }
-        public Speech(string subscriptionKey, string serviceRegion)
+        public Speech(string subscriptionKey, string serviceRegion, string language)
         {
 
             var speechConfig = SpeechConfig.FromSubscription(subscriptionKey, serviceRegion);
+            speechConfig.SpeechRecognitionLanguage = language;
 
             var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
             recognizer = new SpeechRecognizer(speechConfig, audioConfig);

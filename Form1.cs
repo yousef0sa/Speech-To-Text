@@ -45,8 +45,38 @@ namespace Speech_To_Text
 
         private async void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            var selectedFrom = "";
+            var selectedTo = "";
+
+            if (cbFrom.InvokeRequired)
+            {
+                cbFrom.Invoke(new MethodInvoker(delegate ()
+                {
+                    selectedFrom = (string)cbFrom.SelectedValue;
+                }));
+            }
+            else
+            {
+                selectedFrom = (string)cbFrom.SelectedValue;
+            }
+
+            if (cbTo.InvokeRequired)
+            {
+                cbTo.Invoke(new MethodInvoker(delegate ()
+                {
+                    selectedTo = (string)cbTo.SelectedValue;
+                }));
+            }
+            else
+            {
+                selectedTo = (string)cbTo.SelectedValue;
+            }
+
+
+
             // Create a new instance of the Speech class and the Translation class
-            var speech = new Speech(speech_apiKey, region);
+            var speechLanguage =  Languages.speechLanguages( selectedFrom.ToString());
+            var speech = new Speech(speech_apiKey, region, speechLanguage);
             var translation = new Translation(translator_apiKey, region);
 
             // Start the speech recognition
@@ -60,7 +90,7 @@ namespace Speech_To_Text
 
                     if (rbTranslation.Checked)
                     {
-                        await translation.TranslateTextAsync(speech.Text, "en", "ar");
+                        await translation.TranslateTextAsync(speech.Text, selectedFrom.ToString(), selectedTo.ToString());
 
                     }
                     if (buttStart.InvokeRequired)
@@ -110,7 +140,7 @@ namespace Speech_To_Text
         {
             // Add the languages to the combo boxes
             var cb1Items = new List<Languages>(Languages.Items);
-            var  cb2Items = new List<Languages>(Languages.Items);
+            var cb2Items = new List<Languages>(Languages.Items);
 
             cbFrom.DataSource = cb1Items;
             cbFrom.DisplayMember = "Text";
