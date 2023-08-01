@@ -45,37 +45,39 @@ namespace Speech_To_Text
 
         private async void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            var selectedFrom = "";
-            var selectedTo = "";
+            var selectedFromValue = "";
+            var selectedToValue = "";
 
             if (cbFrom.InvokeRequired)
             {
                 cbFrom.Invoke(new MethodInvoker(delegate ()
                 {
-                    selectedFrom = (string)cbFrom.SelectedValue;
+                    selectedFromValue = (string)cbFrom.SelectedValue;
+
                 }));
             }
             else
             {
-                selectedFrom = (string)cbFrom.SelectedValue;
+                selectedFromValue = (string)cbFrom.SelectedValue;
             }
 
             if (cbTo.InvokeRequired)
             {
                 cbTo.Invoke(new MethodInvoker(delegate ()
                 {
-                    selectedTo = (string)cbTo.SelectedValue;
+                    selectedToValue = (string)cbTo.SelectedValue;
                 }));
             }
             else
             {
-                selectedTo = (string)cbTo.SelectedValue;
+                selectedToValue = (string)cbTo.SelectedValue;
+
             }
 
 
 
             // Create a new instance of the Speech class and the Translation class
-            var speechLanguage =  Languages.speechLanguages( selectedFrom.ToString());
+            var speechLanguage = Languages.speechLanguages(selectedFromValue.ToString());
             var speech = new Speech(speech_apiKey, region, speechLanguage);
             var translation = new Translation(translator_apiKey, region);
 
@@ -90,7 +92,7 @@ namespace Speech_To_Text
 
                     if (rbTranslation.Checked)
                     {
-                        await translation.TranslateTextAsync(speech.Text, selectedFrom.ToString(), selectedTo.ToString());
+                        await translation.TranslateTextAsync(speech.Text, selectedFromValue.ToString(), selectedToValue.ToString());
 
                     }
                     if (buttStart.InvokeRequired)
@@ -99,20 +101,46 @@ namespace Speech_To_Text
                     }
 
 
-                    // Check which radio button is selected
+                    // Check if rbSpeech is Checked
                     if (rbSpeech.Checked)
                     {
                         var SpText = Convert.ToString(speech.Text, CultureInfo.InvariantCulture);
-                        MessageBox.Show(SpText, "Speech");
+                        //if the CheckBox is checked, show the text in the message box
+                        if (cbShowText.Checked)
+                        {
+                            MessageBox.Show(SpText, "Speech");
+                        }
+                        //if the CheckBox is checked, copy the text to the clipboard
+                        if (cbCopyText.Checked)
+                        {
+                            TheText theText = new TheText();
+                            theText.CopyText(SpText);
+                        }
 
                     }
+
+                    // Check if rbTranslation is Checked
                     if (rbTranslation.Checked)
                     {
 
                         //Convert change the text to string that can be shown in the message box 
+
+                        var speechText = Convert.ToString(speech.Text, CultureInfo.InvariantCulture);
                         var trText = Convert.ToString(translation.TrText.text, CultureInfo.InvariantCulture);
                         var trlanguage = Convert.ToString(translation.TrText.to, CultureInfo.InvariantCulture);
-                        MessageBox.Show(trText, trlanguage);
+
+                        //if the CheckBox is checked, show the text in the message box
+                        if (cbShowText.Checked)
+                        {
+                            MessageBox.Show($"{speechText}\n{trText}", $"From: {selectedFromValue} To: {selectedToValue}");
+                        }
+                        //if the CheckBox is checked, copy the text to the clipboard
+                        if (cbCopyText.Checked)
+                        {
+                            TheText theText = new TheText();
+                            theText.CopyText(trText);
+                        }
+
 
                     }
 

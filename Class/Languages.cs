@@ -92,6 +92,7 @@ namespace Speech_To_Text.Class
 
         public static List<Languages> Items => _items.Value;
 
+        //Speech Languages
         public static string speechLanguages(string Languages)
         {
             //Afrikaans
