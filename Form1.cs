@@ -178,6 +178,31 @@ namespace Speech_To_Text
             cbTo.DisplayMember = "Text";
             cbTo.ValueMember = "Value";
 
+            //Loading settings
+            rbSpeech.Checked = Properties.Settings.Default.rbSpeech;
+            rbTranslation.Checked = Properties.Settings.Default.rbTranslation;
+            cbCopyText.Checked = Properties.Settings.Default.cbCopyText;
+            cbShowText.Checked = Properties.Settings.Default.cbShowText;
+            cbFrom.SelectedIndex = Properties.Settings.Default.cbFrom;
+            cbTo.SelectedIndex = Properties.Settings.Default.cbTo;
+
+
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Saving settings
+            Properties.Settings.Default.rbSpeech = rbSpeech.Checked;
+            Properties.Settings.Default.rbTranslation = rbTranslation.Checked;
+            Properties.Settings.Default.cbCopyText = cbCopyText.Checked;
+            Properties.Settings.Default.cbShowText = cbShowText.Checked;
+            Properties.Settings.Default.cbFrom = cbFrom.SelectedIndex;
+            Properties.Settings.Default.cbTo = cbTo.SelectedIndex;
+
+
+            // Save the settings
+            Properties.Settings.Default.Save();
 
         }
     }
